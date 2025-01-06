@@ -1,0 +1,158 @@
+/* // import React, { useRef, useEffect, useState } from 'react';
+
+// const App = () => {
+//   const canvasRef = useRef(null);
+
+//   const [ball, setBall] = useState({ x: 400, y: 300, dx: 2, dy: -2, radius: 10 });
+//   const [paddle, setPaddle] = useState({ x: 350, y: 380, width: 1000, height: 10 });
+//   const [bricks, setBricks] = useState(
+//     Array.from({ length: 1 }, (_, row) =>
+//       Array.from({ length: 8 }, (_, col) => ({
+//         x: col * 100 + 10,
+//         y: row * 30 + 10,
+//         width: 90,
+//         height: 20,
+//         visible: true
+//       }))
+//     )
+//   );
+//   const [score, setScore] = useState(0);
+//   const [isGameOver, setIsGameOver] = useState(false);
+//   const [isWin, setIsWin] = useState(false);
+
+//   useEffect(() => {
+//     const canvas = canvasRef.current;
+//     const ctx = canvas.getContext('2d');
+
+//     const drawBall = () => {
+//       ctx.beginPath();
+//       ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
+//       ctx.fillStyle = 'yellow';
+//       ctx.fill();
+//       ctx.closePath();
+//     };
+
+//     const drawPaddle = () => {
+//       ctx.fillStyle = '#fff';
+//       ctx.fillRect(paddle.x, paddle.y, paddle.width, paddle.height);
+//     };
+
+//     const drawBricks = () => {
+//       bricks.forEach((row) => {
+//         row.forEach((brick) => {
+//           if (brick.visible) {
+//             ctx.fillStyle = 'red';
+//             ctx.fillRect(brick.x, brick.y, brick.width, brick.height);
+//           }
+//         });
+//       });
+//     };
+
+//     const updateGame = () => {
+//       ctx.clearRect(0, 0, canvas.width, canvas.height);
+//       drawBall();
+//       drawPaddle();
+//       drawBricks();
+
+//       let newBall = { ...ball };
+//       newBall.x += newBall.dx;
+//       newBall.y += newBall.dy;
+
+//       // Ball collision with walls
+//       if (newBall.x + newBall.radius > canvas.width || newBall.x - newBall.radius < 0) {
+//         newBall.dx *= -1;
+//       }
+//       if (newBall.y - newBall.radius < 0) {
+//         newBall.dy *= -1;
+//       }
+
+//       // Ball collision with paddle
+//       if (
+//         newBall.x > paddle.x &&
+//         newBall.x < paddle.x + paddle.width &&
+//         newBall.y + newBall.radius > paddle.y
+//       ) {
+//         newBall.dy *= -1;
+//       }
+
+//       // Ball collision with bricks
+//       let newScore = score;
+//       const newBricks = bricks.map((row) =>
+//         row.map((brick) => {
+//           if (
+//             brick.visible &&
+//             newBall.x > brick.x &&
+//             newBall.x < brick.x + brick.width &&
+//             newBall.y > brick.y &&
+//             newBall.y < brick.y + brick.height
+//           ) {
+//             newBall.dy *= -1;
+//             newScore += 10;
+//             return { ...brick, visible: false };
+//           }
+//           return brick;
+//         })
+//       );
+
+//       setScore(newScore);
+
+//       // Check if all bricks are broken
+//       const allBricksBroken = newBricks.every((row) =>
+//         row.every((brick) => !brick.visible)
+//       );
+
+//       if (allBricksBroken) {
+//         setIsWin(true);
+//         return;
+//       }
+
+//       // Check for game over
+//       if (newBall.y + newBall.radius > canvas.height) {
+//         setIsGameOver(true);
+//         return;
+//       }
+
+//       setBall(newBall);
+//       setBricks(newBricks);
+//     };
+
+//     const gameLoop = () => {
+//       if (!isGameOver && !isWin) {
+//         updateGame();
+//         requestAnimationFrame(gameLoop);
+//       }
+//     };
+
+//     gameLoop();
+//   }, [ball, bricks, isGameOver, isWin, score, paddle]);
+
+//   const handleMouseMove = (e) => {
+//     const canvas = canvasRef.current;
+//     const rect = canvas.getBoundingClientRect();
+//     const mouseX = e.clientX - rect.left;
+//     setPaddle((prev) => ({
+//       ...prev,
+//       x: Math.max(0, Math.min(mouseX - prev.width / 2, canvas.width - prev.width)),
+//     }));
+//   };
+
+//   return (
+//     <div>
+//       <h1 style={{ textAlign: 'center', color: '#fff' }}>Breakout Game</h1>
+//       <h2 style={{ textAlign: 'center', color: '#fff' }}>Score: {score}</h2>
+//       {isGameOver && <h2 style={{ textAlign: 'center', color: 'red' }}>Game Over!</h2>}
+//       {isWin && <h2 style={{ textAlign: 'center', color: 'green' }}>You Win!</h2>}
+//       <canvas
+//         ref={canvasRef}
+//         width={800}
+//         height={430}
+//         style={{ border: '1px solid #fff', display: 'block', margin: '0 auto' }}
+//         onMouseMove={handleMouseMove}
+//       ></canvas>
+//     </div>
+//   );
+// };
+
+
+
+// export default App; */
